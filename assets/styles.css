@@ -232,6 +232,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .hero .cta-microcopy { justify-content: flex-start; color: #a9b7cf; }
+.hero .lead-form { position: relative; z-index: 1; }
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 40px;
+}
+.hero-stats .stat-num { font-size: 30px; font-weight: 800; color: #e8edf5; line-height: 1.1; }
+.hero-stats .stat-label { font-size: 13.5px; color: rgba(255, 255, 255, 0.5); margin-top: 6px; font-weight: 600; }
 
 .trust-strip {
   margin-top: 46px;
@@ -426,6 +435,26 @@ section { padding: var(--space-section) 0; }
 .proof-result { font-size: 21px; font-weight: 800; color: var(--teal-500); }
 .proof-result span { display: block; font-size: 13.5px; font-weight: 600; color: #aebad4; margin-top: 4px; }
 
+/* Light variant of the proof section */
+.proof-light { background: var(--bg); color: var(--ink-900); }
+.proof-light::before { display: none; }
+.proof-light .section-head h2 { color: var(--navy-900); }
+.proof-light .proof-grid { margin-bottom: 0; }
+.proof-light .proof-card {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.proof-light .proof-card:hover { border-color: var(--blue-100); background: var(--white); }
+.proof-light .proof-tag { color: var(--blue-600); background: var(--blue-50); }
+.proof-light .proof-card h3 { color: var(--navy-900); }
+.proof-light .proof-result span { color: var(--ink-500); }
+.proof-logo { height: 44px; width: auto; max-width: 140px; object-fit: contain; margin-bottom: 16px; }
+.proof-body { font-size: 14.5px; line-height: 1.6; color: var(--ink-700); margin-top: 14px; }
+
 .proof-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -576,6 +605,10 @@ section { padding: var(--space-section) 0; }
 .final-cta p.lead { font-size: 17px; color: #c3ccdf; line-height: 1.65; max-width: 480px; margin-bottom: 26px; }
 .final-cta-points { display: flex; flex-direction: column; gap: 10px; }
 .final-cta-points li { display: flex; gap: 10px; align-items: center; font-size: 14.5px; color: #dbe2f0; }
+.final-cta-points li svg { flex-shrink: 0; margin-top: 3px; }
+.final-cta-points li strong { color: #fff; }
+#book-consultation .final-cta-points li { align-items: flex-start; line-height: 1.55; }
+.final-cta-btn { margin-top: 30px; }
 
 .lead-form {
   background:
@@ -655,6 +688,9 @@ section { padding: var(--space-section) 0; }
   .quote-card { padding: 26px 22px; }
   .quote-text { font-size: 17px; }
   .lead-form { padding: 24px 20px; }
+  .hero-stats { gap: 22px; }
+  .hero-stats .stat-num { font-size: 22px; }
+  .hero-stats .stat-label { font-size: 12px; }
   .trust-strip { flex-direction: column; gap: 10px; }
 }
 
@@ -738,10 +774,59 @@ section { padding: var(--space-section) 0; }
 .cmp-notes svg { flex-shrink: 0; margin-top: 4px; }
 
 /* ---------- Two paths ---------- */
+/* Dark divider section: image placeholder left, deployment options right */
+.paths-section {
+  background: radial-gradient(900px 460px at 15% 0%, rgba(48, 128, 255, 0.24), transparent 60%), linear-gradient(160deg, var(--navy-950), var(--navy-800));
+  color: #fff;
+}
+.paths-split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+.paths-section .section-head h2 { color: #fff; }
+.paths-section .path-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+.paths-section .path-primary { border-color: rgba(48, 128, 255, 0.55); background: rgba(48, 128, 255, 0.08); }
+.paths-section .path-card h3 { color: #fff; }
+.paths-section .path-card p { color: #c3ccdf; }
+@media (max-width: 900px) {
+  .paths-split { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* Section artwork (replaces the image placeholder) */
+.section-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+/* Image placeholder (swap for real artwork) */
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .paths {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 .path-card {
   position: relative;
