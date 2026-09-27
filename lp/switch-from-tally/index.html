@@ -3,404 +3,516 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Onebook: ERPNext-Powered ERP for Manufacturers &amp; Distributors, with Tally Sync</title>
-<meta name="description" content="Onebook is a complete ERP built on Frappe and ERPNext for manufacturers and distributors: production, inventory, procurement, sales, accounting and GST on one platform, with native 2-way Tally sync. Book a free process audit." />
+<title>Onebook — The Operations Core for ₹1Cr+ Businesses Outgrowing Tally</title>
+<meta name="description" content="Onebook runs accounting, GST/TDS, live stock and production from one system, built on ERPNext. Migrate your books fully, or keep your accountant on Tally with 2-way sync." />
 <meta name="robots" content="noindex, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../../assets/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <span class="logo"><img src="../../assets/img/onebook-logo-png.webp" alt="Onebook" /></span>
-    <span class="header-note"><strong>Enterprise ERP on Frappe &amp; ERPNext</strong>, with native 2-way Tally sync</span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top"><img src="../../assets/img/onebook-logo-png.webp" alt="Onebook" width="256" height="128" /></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm" href="#consultation">Book a consultation</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <!-- 1. HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div>       
-        <span class="hero-eyebrow">The Full ERP for Manufacturing, Stock &amp; Accounts</span>
-        <h1>Still Running Your Business on <span class="accent">Tally + Spreadsheets + WhatsApp?</span></h1>
-        <p class="hero-sub">Onebook is a complete ERP — accounting, GST/TDS, live stock, and production — built on ERPNext, the world's most widely deployed open-source ERP framework. Ready to move your books over? We migrate everything. Not ready? A 2-way sync keeps your Tally ledger perfectly current either way.</p>
-        <div class="hero-stats">
-          <div><div class="stat-num">100+</div><div class="stat-label">Successful implementations</div></div>
-          <div><div class="stat-num">5+</div><div class="stat-label">Countries</div></div>
-          <div><div class="stat-num">0%</div><div class="stat-label">Implementation failure</div></div>
-          <div><div class="stat-num">ERPNext</div><div class="stat-label">Built on the platform trusted by 10,000+ businesses worldwide</div></div>
-        </div>
+  <!-- 1. Hero -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Tally keeps your books. It wasn't built to run your business.</p>
+        <h1 class="hero-title">Are you running a ₹1Cr+ business without an operations core?</h1>
+        <p class="hero-sub">Onebook runs your accounting, GST/TDS, live stock, and production — all from one system, built on ERPNext. Migrate your books fully, or keep your accountant right where they are — your Tally ledger stays perfectly in sync, either way.</p>
+        <dl class="stats">
+          <div class="stat"><dt>Successful implementations</dt><dd>100+</dd></div>
+          <div class="stat"><dt>Countries</dt><dd>5+</dd></div>
+          <div class="stat"><dt>Implementation failure</dt><dd>0%</dd></div>
+          <div class="stat"><dt>ERPNext trusted businesses</dt><dd>10K+</dd></div>
+        </dl>
       </div>
-      <div class="lead-form" id="hero-form">
-        <form>
-          <h3>Book a Free Consultation</h3>
-          <span class="form-sub">Free Process Audit and Book a Demo</span>
+
+      <div class="hero-form" id="consultation">
+        <form class="lead-form" novalidate>
+          <h2 class="form-title">Book a free consultation</h2>
+          <p class="form-sub">Free process audit and a demo built around your workflows.</p>
           <div class="field">
-            <label for="hero-name">Name</label>
-            <input type="text" id="hero-name" name="name" placeholder="Your full name" required />
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
           </div>
           <div class="field">
-            <label for="hero-company">Company Name</label>
-            <input type="text" id="hero-company" name="company" placeholder="Your company" required />
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Company name" required />
           </div>
           <div class="field">
-            <label for="hero-contact">Phone or Email</label>
-            <input type="text" id="hero-contact" name="contact" placeholder="Phone number or email" required />
+            <label for="f-contact">Phone or email</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" placeholder="Where we can reach you" required />
           </div>
           <div class="field">
-            <label for="hero-currently">Currently using</label>
-            <select id="hero-currently" name="currently" required>
+            <label for="f-current">Currently using</label>
+            <select id="f-current" name="current" required>
               <option value="" disabled selected>Select one</option>
               <option value="tally">Tally</option>
               <option value="zoho">Zoho</option>
+              <option value="sap">SAP</option>
+              <option value="spreadsheets">Spreadsheets</option>
               <option value="other">Other</option>
             </select>
           </div>
-          <button type="submit" class="btn-cta">Book a Free Consultation <span class="arrow">→</span></button>
+          <button type="submit" class="btn btn-contrast btn-block">Book a free consultation</button>
+          <p class="form-note">We respond within one business day.</p>
         </form>
-        <div class="form-success">
-          <span class="check-lg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <h3>Request received</h3>
-          <p>Our team will reach out within 24 hours to schedule your free process audit.</p>
-        </div>
-        <p class="form-note">Response within 24 hours · No AMC fees · No per-user pricing</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. PLATFORM: ONE ERP, EVERY DEPARTMENT -->
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">ONE PLATFORM, EVERY DEPARTMENT</span>
-        <h2>Everything Your Operations Need, in One ERP</h2>
-      </div>
-      <div class="get-grid">
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></span>
-          <h3>Manufacturing</h3>
-          <p>Multi-level BOMs, work orders, job cards and routing. Manage subcontracting (job work) and track scrap and wastage against every production run.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/></svg></span>
-          <h3>Food &amp; Beverage</h3>
-          <p>Batch and expiry control on every transaction, FEFO picking and quality inspection at receipt and dispatch, for full batch traceability.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m21 8-9-6-9 6 9 6 9-6Z"/><path d="m3 16 9 6 9-6"/><path d="M3 12l9 6 9-6"/></svg></span>
-          <h3>Distribution &amp; Trading</h3>
-          <p>Multi-warehouse stock, landed cost, price lists by customer group, and a clean pick-pack-dispatch flow from order to delivery.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
-          <h3>Procurement</h3>
-          <p>Material requests, RFQs, purchase orders and supplier scorecards, with reorder levels that raise requests automatically.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>
-          <h3>Compliance</h3>
-          <p>GST returns, TDS, e-invoicing and e-way bills generated from the transaction itself, not re-keyed at month-end.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
-          <h3>Finance</h3>
-          <p>Real-time P&amp;L by cost centre and branch, consolidated across locations, closed monthly without waiting on manual reports.</p>
+        <div class="form-success" role="status" hidden>
+          <h2 class="form-title">Request received</h2>
+          <p>Our team will reach out within one business day to schedule your free process audit.</p>
         </div>
       </div>
     </div>
+    <div class="container hero-badge-row">
+      <p class="badge">Complete ERP · Built on ERPNext · Optional 2-way Tally sync</p>
+    </div>
   </section>
 
-  <!-- 3. TWO WAYS TO DO THIS (dark divider) -->
-  <section class="paths-section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow eyebrow-dark">CHOOSE YOUR DEPLOYMENT PATH</span>
-        <h2>Which Way Do You Want to Run Your Business?</h2>
+  <!-- 2. Credibility -->
+  <section class="credibility section-alt" aria-labelledby="cred-title">
+    <div class="container">
+      <div class="cred-head">
+        <h2 id="cred-title" class="cred-eyebrow">Built on enterprise-grade tech</h2>
+        <p class="lede">Onebook is built on Frappe &amp; ERPNext—the exact same robust, open-source architecture trusted by global giants to power mission-critical operations.</p>
       </div>
-      <div class="paths-split">
-        <div class="section-img">
-          <img src="../../assets/img/onebook-vs-tally.jpg" alt="Onebook vs Tally" />
-        </div>
-        <div class="paths">
-          <div class="path-card path-primary">
-            <span class="path-badge">Recommended</span>
-            <h3>Ready to Run Everything on One System?</h3>
-            <p>Bring your books, stock, and manufacturing into a single cloud ERP built on ERPNext. Ledgers update the moment an invoice is generated — full GST, TDS, and e-invoicing run natively in the browser. We handle the entire migration from desktop Tally, train your accounts team, and bring every ledger master and historical balance across with you.</p>
-          </div>
-          <div class="path-card">
-            <h3>Not Ready to Move Your Accounts Off Tally Yet?</h3>
-            <p>That's fine — your accountant keeps working exactly as they do today. Onebook's 2-way sync mirrors every transaction into Tally in real time, while your ops, sales, and warehouse teams get the modern cloud tools Tally was never built for. Zero double entry, zero disruption, and nothing stopping you from switching fully whenever you're ready.</p>
+      <ul class="eco-grid">
+        <li><strong>Zerodha</strong><span>Frappe user and investor</span></li>
+        <li><strong>AVON</strong><span>ERPNext case study</span></li>
+        <li><strong>Axis Bank</strong><span>ERPNext banking integration</span></li>
+        <li><strong>Specsmakers</strong><span>ERPNext retail</span></li>
+        <li><strong>Kindlife</strong><span>ERPNext operations</span></li>
+      </ul>
+      <p class="fineprint">Note: These independent organizations are part of the broader Frappe/ERPNext ecosystem and are not direct customers of Onebook.</p>
+    </div>
+  </section>
+
+  <!-- 3. Industry pain blocks -->
+  <div id="industries">
+    <section class="pain pain-split" aria-labelledby="pain-mfg">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <p class="kicker">Manufacturing</p>
+          <h2 id="pain-mfg" class="split-title">Where your margins <em>quietly disappear</em></h2>
+          <p class="lede">Running production on spreadsheets and notebooks means you find out your real cost per unit weeks after it mattered.</p>
+          <div class="ba-stack">
+            <div class="ba-item ba-before">
+              <h3>Before</h3>
+              <p>BOM lives in the factory manager's head. Product cost is a guess until month-end. Batch recalls mean searching registers. Job-work material goes untracked.</p>
+            </div>
+            <div class="ba-item ba-after">
+              <h3>After, with Onebook</h3>
+              <p>Live raw material and WIP stock. Work orders driven by BOM. Batch and expiry traceability end to end. Actual cost per product.</p>
+            </div>
           </div>
         </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+              <h3>BOM and costing drift</h3>
+              <p>Multi-level BOMs, scrap, and rework tracked in sheets, so the cost you quoted and the cost you spent are two different numbers.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+              <h3>Batch and expiry control</h3>
+              <p>Batch, serial, and shelf-life traceability from raw material to dispatch, no manual register.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-4 4"/><path d="M3 7h18"/><path d="M7 21l-4-4 4-4"/><path d="M21 17H3"/></svg>
+              <h3>Job work and subcontracting</h3>
+              <p>Material sent to a job worker, returned, and reconciled automatically against the work order.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <h3>Quality checks at every stage</h3>
+              <p>Incoming, in-process, and final inspection linked to batch and supplier.</p>
+            </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 4. EVERYTHING TALLY CAN'T DO -->
-  <section>
-    <div class="wrap">
+    <section class="pain pain-split section-alt" aria-labelledby="pain-trade">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <p class="kicker">Wholesale &amp; Trading</p>
+          <h2 id="pain-trade" class="split-title">Heavy operations need more than <em>an accounting package</em></h2>
+          <p class="lede">Every godown running its own count, every salesman quoting a different price — that's a visibility problem, not a stock problem.</p>
+          <div class="ba-stack">
+            <div class="ba-item ba-before">
+              <h3>Before</h3>
+              <p>Stock numbers differ by godown. Wrong prices get quoted. Credit gets checked after dispatch, if at all. Transfers go missing.</p>
+            </div>
+            <div class="ba-item ba-after">
+              <h3>After, with Onebook</h3>
+              <p>Live stock in every warehouse. Price rules applied automatically. Credit blocked before dispatch. Every transfer tracked end to end.</p>
+            </div>
+          </div>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8"/><path d="M7 17h10"/></svg>
+              <h3>Stock across godowns</h3>
+              <p>Live quantities per warehouse and bin, transfers tracked in transit.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><path d="m9 13 4-4"/></svg>
+              <h3>Price lists and margins</h3>
+              <p>Customer-wise, volume-wise, regional pricing applied automatically.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+              <h3>Credit control</h3>
+              <p>Credit limits and overdue blocks checked before the order goes out.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h14v12H1z"/><path d="M15 9h4l4 4v3h-8"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="18" cy="18.5" r="1.8"/></svg>
+              <h3>Fast dispatch</h3>
+              <p>Pick lists, delivery notes, e-way bills, and invoices from one flow.</p>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pain pain-split" aria-labelledby="pain-dist">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <p class="kicker">Distribution &amp; Resellers</p>
+          <h2 id="pain-dist" class="split-title">Thin margins leave <em>no room for leakage</em></h2>
+          <p class="lede">Dealer networks run on relationships and phone calls — which is exactly why schemes get miscalculated and cash gets stuck in the market.</p>
+          <div class="ba-stack">
+            <div class="ba-item ba-before">
+              <h3>Before</h3>
+              <p>Orders lost in chats and calls. Schemes calculated by hand, and calculated wrong. Outstanding lives in a notebook. No visibility into dealer performance.</p>
+            </div>
+            <div class="ba-item ba-after">
+              <h3>After, with Onebook</h3>
+              <p>Every order captured once. Schemes applied automatically. Live outstanding per dealer. Territory and dealer performance visible in one place.</p>
+            </div>
+          </div>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></svg>
+              <h3>Dealer and distributor network</h3>
+              <p>Orders, territories, schemes, and targets tracked per dealer.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <h3>Collections and outstanding</h3>
+              <p>Ageing, reminders, and credit holds applied automatically.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="9" cy="20.5" r="1.2"/><circle cx="18" cy="20.5" r="1.2"/></svg>
+              <h3>Multi-channel sales</h3>
+              <p>B2B, retail POS, and online sales drawing from the same stock.</p>
+            </article>
+            <article class="feature-card">
+              <svg class="feature-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg>
+              <h3>Product-specific control</h3>
+              <p>Batch/hazard for chemicals, variants for furniture, expiry for FMCG and feed.</p>
+            </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4. Also built for your industry -->
+  <section class="more-industries section-alt" aria-labelledby="more-title">
+    <div class="container">
       <div class="section-head">
-        <span class="eyebrow">EVERYTHING TALLY CAN'T DO</span>
-        <h2>The Gaps Tally Was Never Built to Fill</h2>
+        <h2 id="more-title" class="section-title">Also built for your industry</h2>
+        <p class="lede">Onebook comes pre-configured with the exact workflows your sector uses. Launch faster without building from scratch.</p>
       </div>
-      <div class="get-grid get-grid-4">
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
-          <h3>Instant P&amp;L Visibility</h3>
-          <p>Track live profitability and receivables 24/7 without nagging your accounts team for an update.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <h3>Flat-Rate User Licensing</h3>
-          <p>Onboard your entire team—from packers to managers—at one fixed price, skipping Tally's expensive user licensing model.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
-          <h3>100% Cloud Mobility</h3>
-          <p>Check your operational data from anywhere in the world on your phone, requiring absolutely zero desktop workarounds.</p>
-        </div>
-        <div class="get-card">
-          <span class="get-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg></span>
-          <h3>Hands-Free AI Data Entry</h3>
-          <p>Scan PDF invoices and link live bank feeds automatically, automating the repetitive manual entry that slows your business down.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. DIRECT COMPARISON -->
-  <section class="section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">OPERATIONS EFFICIENCY</span>
-        <h2>How Onebook Streamlines Your Organization’s Workflows</h2>
-      </div>
-
-      <div class="cmp">
-        <div class="cmp-row cmp-head">
-          <div class="cmp-feature">Operational Need</div>
-          <div class="cmp-tally">Legacy Systems Alone</div>
-          <div class="cmp-ob">With Onebook Integrated <span class="cmp-badge">Recommended</span></div>
-        </div>
-
-        <div class="cmp-row">
-          <div class="cmp-feature">Team User Logins</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Expensive per-license fees. Warehouse and sales get left out.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>Unlimited users at one flat price. Access for packers, ops, and sales.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Inventory Tracking</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Manual spreadsheets and phone calls to the warehouse.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>Batch/lot traceability, multi-godown stock transfer, and automated reorder-point alerts.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Production &amp; BOMs</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Managed loosely on notebooks and chaotic WhatsApp groups.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>BOM versioning, work-order costing, and wastage/yield tracking across every production run.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Where You Work</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Chained to one office desktop or slow remote-access setups.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>True mobility. Field staff and managers work from any browser or mobile app.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Real-Time P&amp;L</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Call the accountant and wait days for a report.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>Live visibility. Check your profits and cash flow instantly without disturbing the accountant.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Accounting &amp; GST</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Desktop only, completely dependent on the accountant's time.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>Full cloud ledger with GST/TDS, e-invoicing, and e-way bill generation — auto-populated straight into Tally if you stay.</div>
-        </div>
-        <div class="cmp-row">
-          <div class="cmp-feature">Purchase &amp; Vendor Flow</div>
-          <div class="cmp-tally"><span class="cmp-k">Legacy Systems Alone</span>Manual PO tracking, no visibility into what's arrived.</div>
-          <div class="cmp-ob"><span class="cmp-k">With Onebook Integrated</span>GRN-against-PO matching and automated vendor ledger reconciliation.</div>
-        </div>
-      </div>
-
-      <div class="cmp-notes">
-        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c758" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Your Tally masters and historical data migrate across. Nothing gets re-typed, nothing gets lost.</p>
-        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c758" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Not ready to move the books? Keep your accountant on Tally — our 2-way sync keeps both systems aligned automatically. Onebook works either way.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. PROOF -->
-  <section class="proof proof-light">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">OPERATIONAL BREAKTHROUGHS</span>
-        <h2>Real Results from High-Growth Organizations</h2>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card">
-          <img class="proof-logo" src="../../assets/img/afa-logo.png" alt="AFA" />
-          <span class="proof-tag">Food &amp; Beverage Manufacturing</span>
-          <h3>AFA</h3>
-          <p class="proof-result">65%<span>Admin workload saved</span></p>
-          <p class="proof-body">Handled raw material tracking, batch monitoring, and invoicing via connected cloud systems. This wiped out double data entry entirely, freeing administrative staff from manual reconciliations and letting them focus on scaling production lines.</p>
-        </div>
-        <div class="proof-card">
-          <img class="proof-logo" src="../../assets/img/dailee-logo.png" alt="Dailee Fresh" />
-          <span class="proof-tag">F&amp;B Supply Chain</span>
-          <h3>Dailee Fresh</h3>
-          <p class="proof-result">40%<span>Accelerated order processing</span></p>
-          <p class="proof-body">Connected dispatch teams directly to warehouse inventory records. Moving away from static, end-of-day spreadsheets enabled real-time stock deductions at the point of sale, rapidly speeding up fulfillment cycles.</p>
-        </div>
-        <div class="proof-card">
-          <img class="proof-logo" src="../../assets/img/contiship-logo.png" alt="Contiship" />
-          <span class="proof-tag">Logistics</span>
-          <h3>Contiship</h3>
-          <p class="proof-result">6-Week<span>Frictionless system rollout</span></p>
-          <p class="proof-body">Deployed full operational modules seamlessly without interrupting ongoing shipments. Historical balances and data moved over automatically, allowing the business to enjoy cloud agility quickly while keeping existing processes stable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING (hidden) 
-  <section class="section-alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Pricing</span>
-        <h2>One flat price. Unlimited users. No AMC.</h2>
-        <p>Unlimited seats, full data ownership, and AI automation with enterprise security at scale — at one flat rate based on your business size.</p>
-      </div>
-
-      <div class="price-badges">
-        <span>Free consultation</span>
-        <span>Lifetime warranty — no 18–22% annual AMC</span>
-        <span>Data freedom</span>
-      </div>
-
-      <p class="price-billing">Monthly pricing shown · Yearly billing saves 15%</p>
-
-      <div class="price-grid">
-        <div class="price-card">
-          <h3>Micro</h3>
-          <p class="price-for">Best for no customization</p>
-          <p class="price-amount">₹4,000<span>/mo.</span></p>
-          <p class="price-intro">Everything you need to get started:</p>
-          <ul class="price-list">
-            <li><span class="tick">✓</span>1 ERPNext site</li>
-            <li><span class="tick">✓</span>Daily automated backups</li>
-            <li><span class="tick">✓</span>Uptime support</li>
-            <li><span class="tick">✓</span>Standard modules (Buying, Selling, Stock, Accounting, HRMS, Manufacturing, Quality)</li>
-            <li class="off"><span class="tick">✕</span>Custom development</li>
+      <div class="industry-grid">
+        <article class="industry">
+          <h3>Education</h3>
+          <p>Comprehensive management for educational institutions, from K–12 to universities.</p>
+          <ul class="ticks">
+            <li>Student information management</li>
+            <li>Fee collection and tracking</li>
+            <li>Course &amp; curriculum planning</li>
+            <li>Attendance and grading system</li>
           </ul>
-          <p class="price-fine">*4 compute hours/day, 2 GB database, 50 GB disk storage</p>
-          <a href="#book-consultation" class="btn-cta">Book a Free Consultation <span class="arrow">→</span></a>
-          <p class="price-note">No credit card required</p>
-        </div>
-
-        <div class="price-card price-featured">
-          <span class="price-badge">Most popular</span>
-          <h3>Growth</h3>
-          <p class="price-for">For scaling teams up to ₹25 Cr</p>
-          <p class="price-amount">₹12,000<span>/mo.</span></p>
-          <p class="price-intro">Everything in Micro, plus ↓</p>
-          <ul class="price-list">
-            <li><span class="tick">✓</span>AI document automation</li>
-            <li><span class="tick">✓</span>Custom apps &amp; marketplace access</li>
-            <li><span class="tick">✓</span>Customer &amp; vendor portals</li>
-            <li><span class="tick">✓</span>Optional staging site</li>
+          <blockquote><p>“We saved ₹8 Lakhs in licensing fees in year one.”</p><footer>Mariam, Founder, Delhi Public School</footer></blockquote>
+        </article>
+        <article class="industry">
+          <h3>Retail (B2C)</h3>
+          <p>Unified retail management from POS to back-office operations.</p>
+          <ul class="ticks">
+            <li>Point of sale integration</li>
+            <li>Inventory replenishment</li>
+            <li>Customer loyalty &amp; CRM</li>
+            <li>Multi-store management</li>
           </ul>
-          <p class="price-fine">*12 compute hours/day, 6 GB database, 150 GB disk storage</p>
-          <p class="price-quote">&ldquo;We saved ₹8 Lakhs in licensing fees in year one.&rdquo; — Mariam, Founder</p>
-          <a href="#book-consultation" class="btn-cta">Book a Free Consultation <span class="arrow">→</span></a>
-          <p class="price-note">No credit card required</p>
-        </div>
-
-        <div class="price-card">
-          <h3>Enterprise</h3>
-          <p class="price-for">For multi-entity &amp; global ops</p>
-          <p class="price-amount">Custom</p>
-          <p class="price-intro">Everything in Growth, plus ↓</p>
-          <ul class="price-list">
-            <li><span class="tick">✓</span>Unlimited sites, apps, and scaling</li>
-            <li><span class="tick">✓</span>Isolated infrastructure (dedicated VPC)</li>
-            <li><span class="tick">✓</span>Custom integration for enterprise</li>
-            <li><span class="tick">✓</span>Advanced access control (RBAC, audit logs, SLA dashboards)</li>
-            <li><span class="tick">✓</span>Dedicated success engineer</li>
-            <li><span class="tick">✓</span>On-premise or hybrid option</li>
-            <li><span class="tick">✓</span>24/7 premium support</li>
+          <blockquote><p>“Stock-outs dropped by 40% in the first quarter.”</p><footer>Priya, COO, FreshMart</footer></blockquote>
+        </article>
+        <article class="industry">
+          <h3>Healthcare</h3>
+          <p>Patient management, appointments, and compliance in one system.</p>
+          <ul class="ticks">
+            <li>Patient records &amp; history</li>
+            <li>Appointment scheduling</li>
+            <li>Billing &amp; insurance claims</li>
+            <li>Pharmacy &amp; inventory</li>
           </ul>
-          <a href="#book-consultation" class="btn-cta">Book a Free Consultation <span class="arrow">→</span></a>
-          <p class="price-note">Tailored price based on scope</p>
-        </div>
+          <blockquote><p>“Patient wait times cut by 50% after switching.”</p><footer>Dr. Meera, Director, CareFirst Clinic</footer></blockquote>
+        </article>
+        <article class="industry">
+          <h3>Professional Services</h3>
+          <p>Project management, time tracking, and client billing streamlined.</p>
+          <ul class="ticks">
+            <li>Project &amp; task management</li>
+            <li>Time tracking &amp; timesheets</li>
+            <li>Client CRM &amp; invoicing</li>
+            <li>Resource allocation</li>
+          </ul>
+          <blockquote><p>“Billing accuracy improved from 85% to 99%.”</p><footer>Vikram, Managing Partner, ConsultEdge</footer></blockquote>
+        </article>
       </div>
-
-      <p class="price-footnote">* When your usage approaches the limits, you'll be notified and can purchase affordable add-ons to keep your operations running smoothly.</p>
-
-
-      <p class="price-compare">Compare: Tally Prime Gold charges per user, every year. Onebook charges by business size — never by headcount.</p>
     </div>
-  </section>-->
+  </section>
 
-  <!-- 7. FINAL CTA (dark divider) -->
-  <section class="final-cta" id="book-consultation">
-    <div class="wrap">
-      <div class="section-img">
-        <img src="../../assets/img/onebook-img.jpg" alt="Onebook vs Tally" />
+  <!-- 5. Modules -->
+  <section class="modules" id="modules" aria-labelledby="modules-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="modules-title" class="section-title">Every core team. One connected system.</h2>
+      </div>
+      <dl class="product-list">
+        <div><dt>ERPNext</dt><dd>Finance, stock, buying, selling, manufacturing, and projects in one system</dd></div>
+        <div><dt>HRMS</dt><dd>Employees, attendance, leave, payroll, expenses, performance</dd></div>
+        <div><dt>CRM</dt><dd>Leads through opportunities, quotations, follow-ups, won business</dd></div>
+        <div><dt>Helpdesk</dt><dd>Support tickets, service levels, customer answers</dd></div>
+      </dl>
+      <ul class="module-tags" aria-label="Included modules">
+        <li>Manufacturing</li><li>Subcontracting</li><li>Quality</li><li>Inventory</li>
+        <li>Buying</li><li>Assets</li><li>Maintenance</li><li>Accounting</li>
+        <li>CRM</li><li>Selling</li><li>Projects</li><li>Support</li>
+        <li>HR &amp; Payroll</li><li>POS</li><li>Website &amp; Commerce</li><li>Multi-company</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Pricing -->
+  <section class="pricing section-alt" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <div class="pricing-head">
+        <div>
+          <h2 id="pricing-title" class="section-title">Stop paying the login tax</h2>
+          <p class="lede">Onebook uses flat tiers with unlimited users. Put finance, sales, warehouse, and operations on one system.</p>
+        </div>
+        <figure class="pricing-proof">
+          <blockquote><p>“We saved ₹8 Lakhs in licensing fees in year one.”</p></blockquote>
+          <figcaption>Growth tier customer</figcaption>
+        </figure>
       </div>
 
+      <p class="savings">
+        <span><strong>Before:</strong> Zoho · 50 users · ₹12L/year</span>
+        <span class="savings-sep" aria-hidden="true">→</span>
+        <span><strong>After:</strong> Onebook Growth · ₹1.44L/year · 90% cheaper, same features, unlimited users, no AMC.</span>
+      </p>
+
+      <div class="plan-grid">
+        <article class="plan" aria-labelledby="plan-micro">
+          <div class="plan-head">
+            <h3 id="plan-micro"><svg class="plan-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg>Micro</h3>
+            <p>For small teams moving off Tally that need the standard ERP modules on one site.</p>
+          </div>
+          <div class="plan-body">
+            <p class="plan-price"><span class="plan-amount">₹4,000</span><span class="plan-per">/mo</span></p>
+            <a href="#consultation" class="btn btn-gradient btn-block">Book a consultation</a>
+            <p class="plan-label">Best to start</p>
+            <ul class="plan-features">
+              <li>Unlimited users</li>
+              <li>1 ERPNext site</li>
+              <li>Daily backups</li>
+              <li>Standard modules: Buying, Selling, Stock, Accounting, HRMS, Manufacturing, Quality</li>
+              <li>4 compute hrs/day</li>
+              <li>2GB database, 50GB storage</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="plan is-featured" aria-labelledby="plan-growth">
+          <span class="plan-badge">Most popular</span>
+          <div class="plan-head">
+            <h3 id="plan-growth"><svg class="plan-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c3 2.5 4.5 6 4.5 10.5L14 17h-4l-2.5-4.5C7.5 8 9 4.5 12 2Z"/><path d="M7.5 12.5 5 15l2 4 3-2M16.5 12.5 19 15l-2 4-3-2"/><circle cx="12" cy="9" r="1.5"/></svg>Growth</h3>
+            <p>For growing businesses that want automation, portals, and room for custom apps.</p>
+          </div>
+          <div class="plan-body">
+            <p class="plan-price"><span class="plan-amount">₹12,000</span><span class="plan-per">/mo</span></p>
+            <a href="#consultation" class="btn btn-gradient btn-block">Book a consultation</a>
+            <p class="plan-label">Most popular</p>
+            <ul class="plan-features">
+              <li>Everything in Micro, plus:</li>
+              <li>AI document automation</li>
+              <li>Custom apps &amp; marketplace access</li>
+              <li>Customer &amp; vendor portals</li>
+              <li>Optional staging site</li>
+              <li>12 compute hrs/day</li>
+              <li>6GB database, 150GB storage</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="plan" aria-labelledby="plan-enterprise">
+          <div class="plan-head">
+            <h3 id="plan-enterprise"><svg class="plan-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16"/><path d="M16 9h3a2 2 0 0 1 2 2v10"/><path d="M9 7h3M9 11h3M9 15h3"/></svg>Enterprise</h3>
+            <p>For multi-entity operations that need dedicated infrastructure and support.</p>
+          </div>
+          <div class="plan-body">
+            <p class="plan-price"><span class="plan-amount">Custom</span></p>
+            <a href="#consultation" class="btn btn-gradient btn-block">Talk to sales</a>
+            <p class="plan-label">Enterprise plan</p>
+            <ul class="plan-features">
+              <li>Everything in Growth, plus:</li>
+              <li>Unlimited sites &amp; apps</li>
+              <li>Dedicated VPC</li>
+              <li>Custom integrations</li>
+              <li>Advanced access control</li>
+              <li>Dedicated success engineer</li>
+              <li>24/7 support</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Implementation -->
+  <section class="implementation" id="implementation" aria-labelledby="impl-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="impl-title" class="section-title">Get it done for you</h2>
+        <p class="lede">Technical partners handle data migration, workflow mapping, and team training.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="step-num" aria-hidden="true">01</span>
+          <p class="step-week">Week 1</p>
+          <h3>Process mining</h3>
+          <p>Map real workflows, data sources, spreadsheets, and exceptions.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">02</span>
+          <p class="step-week">Week 2</p>
+          <h3>Scope + migration</h3>
+          <p>Lock scope in writing, move clean validated business data.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">03</span>
+          <p class="step-week">Week 3</p>
+          <h3>Configure + test</h3>
+          <p>Build agreed flows, test with your operating team.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">04</span>
+          <p class="step-week">Week 4</p>
+          <h3>Train + go live</h3>
+          <p>Train every role, launch with hands-on operator support.</p>
+        </li>
+      </ol>
+      <div class="impl-notes">
+        <p><strong>Implementation starts from ₹2,00,000</strong>. <br/><small>Workflow mapping · Data migration · Team training · Go-live support.</p>
+        <p class="muted">Gartner predicts 70%+ of recent ERP initiatives fail to meet original goals through 2027. Onebook counters that with written scope, weekly delivery, and operator accountability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Tally sync -->
+  <section class="tally" aria-labelledby="tally-title">
+    <div class="container tally-grid">
       <div>
-        <span class="eyebrow eyebrow-dark">GET STARTED TODAY</span>
-        <h2>Ready to See How Onebook Fits Into Your Business?</h2>
-        <p class="lead">Skip the generic product tour. Book a free process audit with our implementation team. We will analyze your actual production, warehouse, and accounting workflows to map out a frictionless setup plan—completely obligation-free.</p>
-        <ul class="final-cta-points">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c758" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>24-Hour Response:</strong> Our team will get back to you within one business day.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c758" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>No Annual Maintenance Charges (AMC):</strong> Pay only for the software, with zero hidden annual fees.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00c758" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Unlimited Team Access:</strong> Add your entire staff at one flat rate, completely free from restrictive per-user pricing.</span></li>
-        </ul>
-        <a href="#hero-form" class="btn-cta final-cta-btn">Book a Free Consultation <span class="arrow">→</span></a>
+        <p class="kicker kicker-invert">Your CA doesn't have to switch</p>
+        <h2 id="tally-title" class="section-title">Keep your accountant on Tally.</h2>
+      </div>
+      <div>
+        <p class="tally-body">Two-way sync means no disruption. Invoices, payments, and ledger entries sync to Tally automatically — no double entry, no Excel imports at month-end. Your CA sees the same numbers in the format they trust, while you run operations on Onebook.</p>
+        <a class="btn btn-invert" href="#consultation">See the Tally sync in a demo</a>
       </div>
     </div>
   </section>
 
-  <!-- 8. FAQ -->
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">FAQ</span>
-        <h2>Questions? We've got answers.</h2>
-        <p>Everything you need to know about switching from Tally to Onebook.</p>
+  <!-- 9. FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-grid">
+      <div>
+        <h2 id="faq-title" class="section-title">Questions, answered</h2>
+        <p class="muted">Anything else? <a href="#consultation">Ask us directly.</a></p>
       </div>
       <div class="faq-list">
-        <details class="faq-item" open>
-          <summary>Do we have to move our accounting off Tally?<span class="plus">+</span></summary>
-          <p>Recommended, not required. Onebook’s native accounting module beats legacy systems on speed, automation, and mobile access. If you switch, we handle the entire migration and train your accounts team. If you prefer to stay, our advanced two-way sync keeps your accountant on Tally with zero workflow disruption.</p>
+        <details>
+          <summary>Can Onebook handle multi-level BOMs and process manufacturing?</summary>
+          <p>Yes. ERPNext supports multi-level BOMs, routings, workstations, work orders, scrap, and by-products.</p>
         </details>
-        <details class="faq-item">
-          <summary>What is Onebook built on?<span class="plus">+</span></summary>
-          <p>Onebook is built on ERPNext, the most widely deployed open-source ERP framework globally, used by 10,000+ companies across manufacturing, distribution, and services. We've customized it specifically for Indian SMEs — GST/TDS compliance, e-way bill generation, and the 2-way Tally sync layer — and back it with implementation, migration, and ongoing support that a raw open-source install won't give you on its own.</p>
+        <details>
+          <summary>Do you support batch, expiry, and serial tracking?</summary>
+          <p>Yes, from purchase receipt through production to dispatch — supporting recalls and audits.</p>
         </details>
-        <details class="faq-item">
-          <summary>What happens to our historical Tally data?<span class="plus">+</span></summary>
-          <p>It transfers over perfectly. All your ledger masters, historical records, and opening balances migrate cleanly. Nothing needs to be re-typed, and absolutely nothing gets lost.</p>
+        <details>
+          <summary>Can we manage job work with outside vendors?</summary>
+          <p>Yes. Subcontracting tracks material sent, returned, and consumed against each order.</p>
         </details>
-        <details class="faq-item">
-          <summary>How long does implementation take?<span class="plus">+</span></summary>
-          <p>8 to 12 weeks, handled in gradual phases. We map out your timeline clearly so you know your exact go-live date before you even sign a contract.</p>
+        <details>
+          <summary>Can we apply different prices per customer or region?</summary>
+          <p>Yes. Multiple price lists, pricing rules, discounts, and schemes by customer, group, territory, or quantity.</p>
         </details>
-        <details class="faq-item">
-          <summary>Can we start with just inventory and add production later?<span class="plus">+</span></summary>
-          <p>Yes, absolutely. We strictly avoid chaotic, single-day switchovers. You can deploy modules in manageable phases—starting with core books, then layering on inventory, and introducing production tools whenever you are ready.</p>
+        <details>
+          <summary>Can we manage dealer schemes and discounts?</summary>
+          <p>Yes, configured by dealer, territory, product, or quantity and applied automatically on orders.</p>
         </details>
-        <details class="faq-item">
-          <summary>What does it cost?<span class="plus">+</span></summary>
-          <p>One flat price based on your business size, with unlimited users. You pay a transparent rate with no hidden fees: Micro tier at ₹4,000/month, Growth tier at ₹12,000/month, and custom pricing for large Enterprises.</p>
+        <details>
+          <summary>What is Onebook built on?</summary>
+          <p>Onebook is built on ERPNext, the most widely deployed open-source ERP framework globally, used by 10,000+ companies across manufacturing, distribution, and services. We've customized it for Indian SMEs — GST/TDS, e-invoicing, e-way bills, and the 2-way Tally sync layer — and back it with implementation, migration, and support.</p>
         </details>
-        <details class="faq-item">
-          <summary>What if the system doesn't work out for us?<span class="plus">+</span></summary>
-          <p>We eliminate that risk before you buy. That is exactly why we conduct a free operational process audit first. We do not take on a project unless we are 100% certain it will succeed, which is why we maintain zero implementation failures since launch.</p>
+        <details>
+          <summary>Is my data secure on an open-source platform?</summary>
+          <p>Yes. Open source means the codebase is auditable, not that data is public. Your instance runs on a private Azure/AWS server, with encrypted backups, role-based access, and SOC 2-aligned infrastructure. You own your data and can export it anytime.</p>
+        </details>
+        <details>
+          <summary>How long does implementation take?</summary>
+          <p>A focused implementation can target 4 weeks; larger programmes commonly take 8–12. Contiship migrated in 6 weeks. Depends on data, integrations, and agreed scope.</p>
+        </details>
+        <details>
+          <summary>Why no per-user pricing?</summary>
+          <p>Per-user pricing creates a perverse incentive — companies limit access to save cost, so key people end up on spreadsheets instead of the ERP. Flat pricing means every employee gets a login without the bill doubling.</p>
+        </details>
+        <details>
+          <summary>Will switching disrupt my finance team?</summary>
+          <p>Your CA can stay on Tally while operations move to Onebook. Two-way sync keeps both sides aligned.</p>
+        </details>
+        <details>
+          <summary>Can you migrate data from Tally, Zoho, or SAP?</summary>
+          <p>Yes. We inspect masters, opening balances, transactions, and workflow dependencies, then document and test the migration before go-live.</p>
+        </details>
+        <details>
+          <summary>What if it doesn't work out for us?</summary>
+          <p>You're not locked in. Onebook includes a lifetime warranty, and your data remains portable. Scope is locked in writing before implementation.</p>
         </details>
       </div>
     </div>
@@ -409,9 +521,12 @@
 </main>
 
 <footer class="site-footer">
-  © 2026 Onebook. All rights reserved.
+  <div class="container footer-inner">
+    <img src="../../assets/img/onebook-logo-png.webp" alt="Onebook" width="256" height="128" />
+    <p>© 2026 Onebook. Built on ERPNext.</p>
+  </div>
 </footer>
 
-<script src="../../assets/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
