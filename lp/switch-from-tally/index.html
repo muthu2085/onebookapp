@@ -149,7 +149,7 @@
           <li><strong>Done for you.</strong> Implementation, data migration, and support are part of the package.</li>
         </ul>
        
-        <a class="btn btn-gradient" href="#consultation">Book a free process audit</a>
+        <a class="btn btn-gradient" href="#consultation" data-popup>Book a free process audit</a>
       </div>
     </div>
   </section>
@@ -219,7 +219,7 @@
       <div class="pillars-intro">
         <h2 id="pillars-title" class="section-title">Run your whole business on <em>live data</em></h2>
         <p class="lede">No waiting for accountant emails, no per-user fees, no desktop workarounds. Get real-time visibility across finance, production, and stock.</p>
-        <a class="btn btn-invert" href="#consultation">Book a free process audit</a>
+        <a class="btn btn-invert" href="#consultation" data-popup>Book a free process audit</a>
       </div>
       <div class="pillar-stack">
           <details class="pillar" name="pillars" open>
@@ -289,7 +289,7 @@
       </div>
     </div>
     <div class="container case-cta">
-      <a class="btn btn-gradient" href="#consultation">Book a free process audit</a>
+      <a class="btn btn-gradient" href="#consultation" data-popup>Book a free process audit</a>
     </div>
   </section>
 
@@ -339,7 +339,7 @@
         <h2 id="modules-title" class="section-title">OS for your <em>entire operation</em></h2>
         <p class="lede">Configure the perfect ERP experience that unifies context across finance, manufacturing, and sales. No heavy coding required.</p>
       </div>
-      <img class="os-shot" src="../../assets/img/onebook-apps.jpeg" alt="Onebook app launcher connecting Sales &amp; CRM, Finance &amp; Tax, Selling, Subcontracting, Project Management, Manufacturing, Inventory &amp; Ops, and Team &amp; Payroll" width="1200" height="533" loading="lazy" />
+      <img class="os-shot" src="../../assets/img/onebook-osapp.jpg" alt="Onebook app launcher connecting Sales &amp; CRM, Finance &amp; Tax, Selling, Subcontracting, Project Management, Manufacturing, Inventory &amp; Ops, and Team &amp; Payroll" width="1600" height="899" loading="lazy" />
     </div>
   </section>
 
@@ -362,7 +362,7 @@
           <li><strong>No month-end imports.</strong> No Excel exports, no re-keying, no reconciling two sets of books.</li>
           <li><strong>Same numbers, both sides.</strong> Your CA stays in Tally; your team works live in Onebook.</li>
         </ul>
-        <a class="btn btn-gradient about-cta" href="#consultation">See the Tally sync in a demo</a>
+        <a class="btn btn-gradient about-cta" href="#consultation" data-popup>See the Tally sync in a demo</a>
       </div>
     </div>
   </section>
@@ -394,7 +394,7 @@
           </div>
           <div class="plan-body">
             <p class="plan-price"><span class="plan-amount">₹4,000</span><span class="plan-per">/mo</span></p>
-            <a href="#consultation" class="btn btn-gradient btn-block">Book a consultation</a>
+            <a href="#consultation" data-popup class="btn btn-gradient btn-block">Book a consultation</a>
             <p class="plan-label">Best to start</p>
             <ul class="plan-features">
               <li>Unlimited users</li>
@@ -415,7 +415,7 @@
           </div>
           <div class="plan-body">
             <p class="plan-price"><span class="plan-amount">₹12,000</span><span class="plan-per">/mo</span></p>
-            <a href="#consultation" class="btn btn-gradient btn-block">Book a consultation</a>
+            <a href="#consultation" data-popup class="btn btn-gradient btn-block">Book a consultation</a>
             <p class="plan-label">Most popular</p>
             <ul class="plan-features">
               <li>Everything in Micro, plus:</li>
@@ -436,7 +436,7 @@
           </div>
           <div class="plan-body">
             <p class="plan-price"><span class="plan-amount">Custom</span></p>
-            <a href="#consultation" class="btn btn-gradient btn-block">Talk to sales</a>
+            <a href="#consultation" data-popup class="btn btn-gradient btn-block">Talk to sales</a>
             <p class="plan-label">Enterprise plan</p>
             <ul class="plan-features">
               <li>Everything in Growth, plus:</li>
@@ -498,7 +498,7 @@
     <div class="container faq-grid">
       <div>
         <h2 id="faq-title" class="section-title">Questions, answered</h2>
-        <p class="muted">Anything else? <a href="#consultation">Ask us directly.</a></p>
+        <p class="muted">Anything else? <a href="#consultation" data-popup>Ask us directly.</a></p>
       </div>
       <div class="faq-list">
         <details>
@@ -554,6 +554,44 @@
   </section>
 
 </main>
+
+<dialog class="lead-modal" id="lead-modal" aria-labelledby="m-title">
+  <button type="button" class="modal-close" aria-label="Close">&times;</button>
+  <form class="lead-form" novalidate>
+    <h2 class="form-title" id="m-title">Book a free consultation</h2>
+    <p class="form-sub">Free process audit and a demo built around your workflows.</p>
+    <input type="hidden" name="source" value="" />
+    <div class="field">
+      <label for="m-name">Name</label>
+      <input id="m-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+    </div>
+    <div class="field">
+      <label for="m-company">Company</label>
+      <input id="m-company" name="company" type="text" autocomplete="organization" placeholder="Company name" required />
+    </div>
+    <div class="field">
+      <label for="m-contact">Phone or email</label>
+      <input id="m-contact" name="contact" type="text" autocomplete="email" placeholder="Where we can reach you" required />
+    </div>
+    <div class="field">
+      <label for="m-current">Currently using</label>
+      <select id="m-current" name="current" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="tally">Tally</option>
+        <option value="zoho">Zoho</option>
+        <option value="sap">SAP</option>
+        <option value="spreadsheets">Spreadsheets</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-gradient btn-block">Book a free expert consultation</button>
+    <p class="form-note">We respond within one business day.</p>
+  </form>
+  <div class="form-success" role="status" hidden>
+    <h2 class="form-title">Request received</h2>
+    <p>Our team will reach out within one business day to schedule your free process audit.</p>
+  </div>
+</dialog>
 
 <footer class="site-footer">
   <div class="container footer-inner">
